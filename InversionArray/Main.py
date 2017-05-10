@@ -17,7 +17,7 @@ def find_split_inversion(fir_array,sec_array):
                 i = i + 1
                 k = k +1
         else :
-            if fir_array[i] < sec_array[j]:
+            if fir_array[i] <= sec_array[j]:
                 final_arr[k] = fir_array[i]
                 i = i + 1
             else:
@@ -37,6 +37,7 @@ def find_inversion(sub_arr):
         sec_sorted_array , num_2 = find_inversion(sub_arr[mid:])
         third_sorted_array , num_3 = find_split_inversion(first_sorted_array,sec_sorted_array)
         return third_sorted_array , num_1+num_2+num_3
+
 n = int(input())
 main_array = []
 for i in range(n):
