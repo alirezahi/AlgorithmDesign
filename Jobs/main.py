@@ -15,9 +15,14 @@ def permutation(lst):
     return l
 
 
-data = [0,1,2,3]
-table = [[9,2,7,8],[6,4,3,7],[5,8,1,8],[7,6,9,4]]
+n = int(input())
+data=[i for i in range(n)]
+table = [[int(i) for i in input().split(' ')] for j in range(n)]
 min_num = 99999
+result = []
 for p in permutation(data):
-    min_num = min(table[0][p[0]]+table[1][p[1]]+table[2][p[2]]+table[3][p[3]],min_num)
-print(min_num)
+    if min_num>table[0][p[0]]+table[1][p[1]]+table[2][p[2]]+table[3][p[3]]:
+        min_num = table[0][p[0]]+table[1][p[1]]+table[2][p[2]]+table[3][p[3]]
+        result = p
+for i in result:
+    print(i)
